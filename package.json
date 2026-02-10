@@ -4,7 +4,9 @@
   "description": "A simple online calculator built with Node.js and Express. Supports query string operations (add, subtract, multiply, divide) and returns results in plain text or JSON. Includes sample data and API documentation.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,9 @@
   "homepage": "https://github.com/tayogunsola-lab/ONLINE-CALCULATOR#readme",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0"
   }
 }
