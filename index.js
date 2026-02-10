@@ -70,6 +70,21 @@ app.get('/calc', (req, res) => {
         message = `The value of tan ${num}º is ${result}`
         break
 
+      case 'asin':
+        result = calculator.asin(num)
+        message = `The value of sin inverse ${num}º is ${result}`
+        break
+
+      case 'acos':
+        result = calculator.acos(num)
+        message = `The value of cos inverse ${num}º is ${result}`
+        break
+
+      case 'atan':
+        result = calculator.atan(num)
+        message = `The value of tan inverse ${num}º is ${result}`
+        break
+
       case 'cot':
         result = calculator.cot(num)
         message = `The value of cot ${num}º is ${result}`

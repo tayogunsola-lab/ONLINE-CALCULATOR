@@ -1,7 +1,8 @@
 # Online Calculator
 
 A simple online calculator built with Node.js and Express.
-It supports query string operations (add, subtract, multiply, divide) and returns results in JSON format.
+It supports query string operations (add, subtract, multiply, divide) and returns results in Plain Text format.
+`Plain Text was prioritized over JSON for simplicity.`
 This project also includes sample requests and basic API documentation.
 
 ---
@@ -78,6 +79,18 @@ http://localhost:3000
 http://localhost:3000
 ```
 
+### Enpoint for Single Number Operations
+
+```
+http://localhost:3000/calc?num={num}&op={op}
+```
+
+### Endpoint for Multiple Number Operations
+
+```
+http://localhost:3000/calc?num1={num1}&num2={num2}&op={op}
+```
+
 ---
 
 ### Health Check
@@ -102,16 +115,34 @@ GET /calc
 
 ### Query Parameters
 
-* `num1` First number
-* `num2` Second number
+* `num1` Firat Input for Double Number Operations
+* `num2` Second Input for Double Number Operations
+* `num` Input for Single Number Operations
 * `op` Operation to perform
 
 ### Supported Operations
 
 * add
-* sub
-* mul
-* div
+* subtract
+* power
+* exponential
+* exponent
+* sqrt
+* rt
+* log
+* log10
+* multiply
+* divide
+* sin
+* cos
+* tan
+* asin
+* acos
+* atan
+* sec
+* cosec
+* cot
+* factorial
 
 ---
 
@@ -126,36 +157,53 @@ Addition:
 Subtraction:
 
 ```
-/calc?num1=10&num2=5&op=sub
+/calc?num1=10&num2=5&op=subtract
 ```
 
 Multiplication:
 
 ```
-/calc?num1=10&num2=5&op=mul
+/calc?num1=10&num2=5&op=multiply
 ```
 
 Division:
 
 ```
-/calc?num1=10&num2=5&op=div
+/calc?num1=10&num2=5&op=divide
+```
+
+Tan:
+
+```
+/calc?num=45&op=tan
+```
+
+Cos:
+
+```
+/calc?num=45&op=cos
+```
+
+Sin:
+
+```
+/calc?num=45&op=sin
 ```
 
 ---
 
 ## Sample Response
 
-```json
-{
-  "success": true,
-  "message": "Calculation successful",
-  "data": {
-    "num1": "10",
-    "num2": "5",
-    "operation": "add",
-    "result": 15
-  }
-}
+```
+Addition: The value of 22 + 33 is 55
+Multiplication: The value of 2 * 3 is 6
+Division: The value of 22 ÷ 11 is 2
+
+Tan: The value of tan 45º is 1.6197751905438615
+Sin: The value of sin 45º is 0.8509035245341184
+Cos: The value of cos 45º is 0.5253219888177297
+
+Factorial: The value of 45! is 1.1962222086548019e+56
 ```
 
 ---
@@ -163,7 +211,7 @@ Division:
 ## Common Errors
 
 * Using letters instead of numbers
-* Dividing by zero
+* Dividing by zero(returns Undfined for Divisions with zero as both Numerator and Denominator and Infinty '∞' for 0 as the denominator alone)
 * Using an unsupported operation
 
 The API returns clear error messages when these issues occur.
