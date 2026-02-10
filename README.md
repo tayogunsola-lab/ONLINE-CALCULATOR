@@ -115,7 +115,7 @@ GET /calc
 
 ### Query Parameters
 
-* `num1` Firat Input for Double Number Operations
+* `num1` First Input for Double Number Operations
 * `num2` Second Input for Double Number Operations
 * `num` Input for Single Number Operations
 * `op` Operation to perform
