@@ -1,4 +1,4 @@
- function toNumber(value) {
+function toNumber(value) {
   const num = Number(value)
   if (Number.isNaN(num)) {
     throw new Error('Enter valid numbers.')
@@ -14,6 +14,34 @@ function subtract(a, b) {
   return toNumber(a) - toNumber(b)
 }
 
+function power(a, b) {
+  return toNumber(a) ** toNumber(b)
+}
+
+function exponential(a, b) {
+  return toNumber(a) * 10 ** toNumber(b)
+}
+
+function exponent(a) {
+  return 10 ** toNumber(a)
+}
+
+function sqrt(a) {
+  return Math.sqrt(toNumber(a))
+}
+
+function rt(a, b) {
+  return toNumber(a) ** (1 / toNumber(b)) || Math.pow(toNumber(a), 1 / toNumber(b))
+}
+
+function log(a, b) {
+  return Math.log(toNumber(a)) / Math.log(toNumber(b))
+}
+
+function log10(a) {
+  return Math.log10(toNumber(a))
+}
+
 function multiply(a, b) {
   return toNumber(a) * toNumber(b)
 }
@@ -21,16 +49,57 @@ function multiply(a, b) {
 function divide(a, b) {
   const numerator = toNumber(a)
   const denominator = toNumber(b)
-  if (denominator === 0) {
-    throw new Error(`Error: ${numerator} is indivisible by zero`)
+  if (denominator === 0 && numerator === 0) {
+    return `Undefined`
   }
+  if (denominator === 0) {
+    return `∞`
+  }
+  
   return numerator / denominator
+}
+
+function sin(a) {
+  return Math.sin(toNumber(a))
+}
+
+function cos(a) {
+  return Math.cos(toNumber(a))
+}
+
+function tan(a) {
+  return Math.tan(toNumber(a))
+}
+
+function sec(a) {
+  return 1 / cos(a)
+}
+
+function cosec(a) {
+  return 1 / sin(a)
+}
+
+function cot(a) {
+  return 1 / tan(a)
 }
 
 export default {
   toNumber,
   add,
   subtract,
+  power,
+  exponential,
+  exponent,
+  sqrt,
+  rt,
+  log,
+  log10,
   multiply,
-  divide
+  divide,
+  sin,
+  cos,
+  tan,
+  sec,
+  cosec,
+  cot
 }
