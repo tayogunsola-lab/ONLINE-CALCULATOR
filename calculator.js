@@ -26,6 +26,18 @@ function exponent(a) {
   return 10 ** toNumber(a)
 }
 
+function factorial(a) {
+  const n = toNumber(a)
+  if (n < 0) {
+    throw new Error('Factorial is not defined for negative numbers.')
+  }
+  let result = 1
+  for (let i = 2; i <= n; i++) {
+    result *= i
+  }
+  return result
+}
+
 function sqrt(a) {
   return Math.sqrt(toNumber(a))
 }
@@ -101,5 +113,6 @@ export default {
   tan,
   sec,
   cosec,
-  cot
+  cot,
+  factorial
 }

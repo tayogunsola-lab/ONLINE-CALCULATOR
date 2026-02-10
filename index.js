@@ -99,6 +99,11 @@ app.get('/calc', (req, res) => {
         result = calculator.exponent(num)
         message = `The value of 10^${num} is ${result}`
         break
+      
+      case 'factorial':
+        result = calculator.factorial(num)
+        message = `The value of ${num}! is ${result}`
+        break
 
       default:
         throw new Error('Invalid Operation!')
