@@ -79,13 +79,13 @@ http://localhost:3000
 http://localhost:3000
 ```
 
-### Route for Single Number Operations
+### Enpoint for Single Number Operations
 
 ```
 http://localhost:3000/calc?num={num}&op={op}
 ```
 
-### Route for Multiple Number Operations
+### Endpoint for Multiple Number Operations
 
 ```
 http://localhost:3000/calc?num1={num1}&num2={num2}&op={op}
