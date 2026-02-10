@@ -122,17 +122,20 @@ GET /calc
 
 ### Supported Operations
 
+#### Multiple Number Operations
 * add
 * subtract
 * power
-* exponential
-* exponent
-* sqrt
+* multiply
 * rt
 * log
-* log10
-* multiply
 * divide
+* exponential
+* exponent
+
+#### Single Number Operations
+* sqrt
+* log10
 * sin
 * cos
 * tan
