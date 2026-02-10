@@ -1,4 +1,10 @@
 function toNumber(value) {
+  if (value === '' || value === null || value === undefined) {
+    throw new Error('Enter valid numbers.')
+  }
+  if (typeof value === 'string' && value.trim() === '') {
+    throw new Error('Enter valid numbers.')
+  }
   const num = Number(value)
   if (Number.isNaN(num)) {
     throw new Error('Enter valid numbers.')
@@ -9,6 +15,15 @@ function toNumber(value) {
   return num
 }
 
+function toDegrees(radians) {
+  return radians * (Math.PI/180)
+}
+
+function snapNearInt(x, eps = 1e-12) {
+  if (typeof x !== 'number' || !Number.isFinite(x)) return x
+  const r = Math.round(x)
+  return Math.abs(x - r) < eps ? r : x
+}
 
 function add(a, b) {
   return toNumber(a) + toNumber(b)
@@ -35,6 +50,9 @@ function factorial(a) {
   if (n < 0) {
     throw new Error('Factorial is not defined for negative numbers.')
   }
+  if (n > 170) {
+    throw new Error('Number too large for factorial calculations.')
+  }
   let result = 1
   for (let i = 2; i <= n; i++) {
     result *= i
@@ -47,10 +65,16 @@ function sqrt(a) {
 }
 
 function rt(a, b) {
+  if ( toNumber(b) === 0 ) {
+    throw new Error('Root degree cannot be zero.')
+  }
   return toNumber(a) ** (1 / toNumber(b)) || Math.pow(toNumber(a), 1 / toNumber(b))
 }
 
 function log(a, b) {
+  if (toNumber(a) <= 0 || toNumber(b) <= 0 || toNumber(b) === 1) {
+    throw new Error('Invalid input for logarithm.')
+  }
   return Math.log(toNumber(a)) / Math.log(toNumber(b))
 }
 
@@ -76,27 +100,33 @@ function divide(a, b) {
 }
 
 function sin(a) {
-  return Math.sin(toNumber(a))
+  const deg = toNumber(a)
+  const out = Math.sin(toDegrees(deg))
+  return snapNearInt(out)
 }
 
 function cos(a) {
-  return Math.cos(toNumber(a))
+  const deg = toNumber(a)
+  const out = Math.cos(toDegrees(deg))
+  return snapNearInt(out)
 }
 
 function tan(a) {
-  return Math.tan(toNumber(a))
+  const deg = toNumber(a)
+  const out = Math.tan(toDegrees(deg))
+  return snapNearInt(out)
 }
 
 function asin(a) {
-  return Math.asin(toNumber(a))
+  return Math.asin(toNumber(toDegrees(a)))
 }
 
 function acos(a) {
-  return Math.acos(toNumber(a))
+  return Math.acos(toNumber(toDegrees(a)))
 }
 
 function atan(a) {
-  return Math.atan(toNumber(a))
+  return Math.atan(toNumber(toDegrees(a)))
 }
 
 function sec(a) {

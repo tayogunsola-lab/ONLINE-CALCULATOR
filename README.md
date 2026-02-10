@@ -18,6 +18,7 @@ This project also includes sample requests and basic API documentation.
 * Input validation to ensure only numbers are processed
 * Custom error handling for division by zero
 * Built using modern JavaScript with ES Modules (import/export)
+* Converts radians to degrees for Trig Functions
 
 ---
 
