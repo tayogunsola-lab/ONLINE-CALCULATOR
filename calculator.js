@@ -83,6 +83,18 @@ function tan(a) {
   return Math.tan(toNumber(a))
 }
 
+function asin(a) {
+  return Math.asin(toNumber(a))
+}
+
+function acos(a) {
+  return Math.acos(toNumber(a))
+}
+
+function atan(a) {
+  return Math.atan(toNumber(a))
+}
+
 function sec(a) {
   return 1 / cos(a)
 }
@@ -111,6 +123,9 @@ export default {
   sin,
   cos,
   tan,
+  asin,
+  acos,
+  atan,
   sec,
   cosec,
   cot,
