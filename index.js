@@ -7,9 +7,9 @@ app.get('/', (req, res) => {
   res.send('Hello, Welcome to Calculator')
 })
 
+
 app.get('/calc', (req, res) => {
   const { num1, num2, num, op } = req.query
-
   try {
     let result
     let message

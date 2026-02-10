@@ -3,8 +3,12 @@ function toNumber(value) {
   if (Number.isNaN(num)) {
     throw new Error('Enter valid numbers.')
   }
+  if (!Number.isFinite(num)) {
+    throw new Error('Number is too large or too small.')
+  }
   return num
 }
+
 
 function add(a, b) {
   return toNumber(a) + toNumber(b)
