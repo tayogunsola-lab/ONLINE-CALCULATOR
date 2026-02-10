@@ -171,3 +171,26 @@ The API returns clear error messages when these issues occur.
 ## Contributors and their tasks
 
 
+1. NAME: Chukwuebuka Timothy Ayogu, 
+   EMAIL: ayogutimothy107@gmail.com
+   REG NO: BD/2025/TC5/186
+2. Name: Tayo Ogunsola
+   Email:  tayogunsola@gmail.com
+   Reg No: BD/2025/TC5/183
+3. Name: Adepoju Yusuf, 
+   Email: yusufadepoju22@gmail.com, 
+   Reg No: BD/2025/TC5/199
+4. Name: Omoju Oluwamayowa
+   Email: omojumayowa@gmail.com
+   Reg No: BD/2025/TC5/196
+5. Name: Oladosu Abdullateef.
+   Email: ayofrenzy719@gmail.com 
+   Reg No:BD/2025/TC5/126
+6. Name: Obi Celine Praise
+   Email: obipraise2002@gmail.com 
+   Reg No: BD/2025/TC5/135
+7. Name:  Asil Adongo 
+   Email adongoasil@gmail.com 
+   Reg no: BD/2025/TC5/195
+
+
