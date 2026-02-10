@@ -34,10 +34,13 @@ This project also includes sample requests and basic API documentation.
 ```
 online-calculator/
 │
-├── index.js         Main server file
-├── calculator.js    Calculator logic module
-├── package.json     Project metadata and dependencies
-└── README.md        Project documentation
+├── .gitignore             To keep the repo clean and remove unnecessary files
+├── README.md              Project documentation
+├── index.js               Main server file
+├── calculator.js          Calculator logic module
+├── eslint.config.js       To configure the behavior of ESLint
+├── package-lock.json      To ensures that the same version of a specific dependency is installed
+└── package.json           Project metadata and dependencies
 ```
 
 ---
@@ -155,48 +158,135 @@ GET /calc
 ---
 
 ## Example Requests
-
+### Arithmetic Operations (Requires num1, num2)
 Addition:
 
 ```
-/calc?num1=10&num2=5&op=add
+GET /calc?num1={num1}&num2={num2}&op=add
 ```
 
 Subtraction:
 
 ```
-/calc?num1=10&num2=5&op=subtract
+GET /calc?num1={num1}&num2={num2}&op=subtract
 ```
 
 Multiplication:
 
 ```
-/calc?num1=10&num2=5&op=multiply
+GET /calc?num1={num1}&num2={num2}&op=multiply
 ```
 
 Division:
 
 ```
-/calc?num1=10&num2=5&op=divide
+GET /calc?num1={num1}&num2={num2}&op=divide
 ```
 
-Tan:
+Power:
 
 ```
-/calc?num=45&op=tan
+GET /calc?num1={num1}&num2={num2}&op=power
 ```
 
-Cos:
+Nth Root:
 
 ```
-/calc?num=45&op=cos
+GET /calc?num1={num1}&num2={num2}&op=rt
 ```
 
-Sin:
+Log (custom base):
 
 ```
-/calc?num=45&op=sin
+GET /calc?num1={num1}&num2={num2}&op=log
 ```
+
+Scientific Notation:
+```
+GET /calc?num1={num1}&num2={num2}&op=exponential
+```
+
+### Trigonometric Functions (Requires num)
+Sine:
+
+```
+GET /calc?num={num}&op=sin
+```
+
+Cosine:
+
+```
+GET /calc?num={num}&op=cos
+```
+
+Tangent: 
+
+```
+GET /calc?num={num}&op=tan
+```
+
+Sine Inverse:
+
+```
+GET /calc?num={num}&op=asin
+```
+
+Cosine Inverse:
+
+```
+GET /calc?num={num}&op=acos
+```
+
+Tangent Inverse:
+
+```
+GET /calc?num={num}&op=atan
+```
+
+Cotangent Inverse:
+
+```
+GET /calc?num={num}&op=cot
+```
+
+Secant:
+
+```
+GET /calc?num={num}&op=sec
+```
+
+Cosecant:
+
+```
+GET /calc?num={num}&op=cosec
+```
+
+### Logarithm and Exponential (Requires num)
+Square Root:
+
+```
+GET /calc?num={num}&op=sqrt
+```
+
+Log Base 10:
+
+```
+GET /calc?num={num}&op=log10
+```
+
+10 to the power of n:
+
+```
+GET /calc?num={num}&op=exponent
+```
+
+### Other Operations
+Factorial:
+
+```
+GET /calc?num={num}&op=factorial
+```
+
 
 ---
 
@@ -204,11 +294,15 @@ Sin:
 
 ```
 Addition: The value of 22 + 33 is 55
+
 Multiplication: The value of 2 * 3 is 6
+
 Division: The value of 22 ÷ 11 is 2
 
 Tan: The value of tan 45º is 1.6197751905438615
+
 Sin: The value of sin 45º is 0.8509035245341184
+
 Cos: The value of cos 45º is 0.5253219888177297
 
 Factorial: The value of 45! is 1.1962222086548019e+56
