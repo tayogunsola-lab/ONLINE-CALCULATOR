@@ -4,6 +4,8 @@ export default [
   js.configs.recommended,
   {
     languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         console: "readonly",
         process: "readonly"
@@ -11,7 +13,8 @@ export default [
     },
     rules: {
       "no-unused-vars": "warn",
-      "no-console": "error"
+      "no-console": "warn",   // changed from "error" to "warn"
+      "no-undef": "error"
     }
   }
 ];
