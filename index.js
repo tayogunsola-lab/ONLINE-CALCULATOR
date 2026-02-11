@@ -130,7 +130,7 @@ app.get('/calc', (req, res) => {
   }
 })
 
-const port = process.env.PORT
+const port = 3000
 app.listen(port, () => {
   console.log(`Calculator is running on http://localhost:${port}`)
 })
